@@ -1,0 +1,98 @@
+<div class="ion-padding">
+
+  <form [formGroup]="myForm">
+    <h2> Checkbox Group </h2>
+    <app-checkbox-group formControlName="toppings">
+      <app-checkbox *ngFor="let checkbox of checkboxes" [value]="checkbox.value" [label]="checkbox.label"></app-checkbox>
+    </app-checkbox-group>
+  </form>
+
+  <div>
+    <h2>Form values</h2>
+    <ng-container *ngIf="myForm.valueChanges | async as values; else loading">
+      <pre>{{ values | json }}</pre>
+    </ng-container>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+<!-- <ng-container *ngIf="expression; else loading">
+<ng-container *ngFor="let item of expression">{{item}}</ng-container>
+</ng-container> -->
+
+<!-- <table id="container">
+  <thead>
+    <tr>
+      <th>Front</th>
+      <th>HW</th>
+      <th>MW</th>
+      <th>HM</th>
+      <th>MM</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of data"> -->
+    <!-- <tr *ngFor="let front of item.HW.F"> -->
+    <!-- <tr>
+
+      <td>Front</td>
+      <td>{{item.HW.F | json}}</td>
+      <td>{{item.MW.F | json}}</td>
+      <td>{{item.HM.F | json}}</td>
+      <td>{{item.MM.F | json}}</td>
+    </tr> -->
+
+    <!-- <tr>
+      <td>Single</td>
+      <td></td>
+      <td id="Single"></td>
+    </tr>
+    <tr>
+      <td>Double</td>
+      <td></td>
+      <td id="Double"></td>
+    </tr>
+    <tr>
+      <td>Triple</td>
+      <td id="Triple"></td>
+    </tr>
+
+    <br><br>
+    <tr>
+      <td>Back</td>
+      <td>{{item.HW.B | json}}</td>
+      <td>{{item.MW.B | json}}</td>
+      <td>{{item.HM.B | json}}</td>
+      <td>{{item.MM.B | json}}</td>    
+    </tr>
+    <tr>
+      <td>Split</td>
+      <td>{{item.HW.S | json}}</td>
+      <td>{{item.MW.S | json}}</td>
+      <td>{{item.HM.S | json}}</td>
+      <td>{{item.MM.S | json}}</td>    
+    </tr>
+    <tr>
+      <td>FSB</td>
+      <td>{{item.HW.FBS | json}}</td>
+      <td>{{item.MW.FBS | json}}</td>
+      <td>{{item.HM.FBS | json}}</td>
+      <td>{{item.MM.FBS | json}}</td> 
+    </tr>
+    <tr>
+      <td>FBS</td>
+      <td>{{item.HW.FSB | json}}</td>
+      <td>{{item.MW.FSB | json}}</td>
+      <td>{{item.HM.FSB | json}}</td>
+      <td>{{item.MM.FSB | json}}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+<!-- <div>
+  <pre>{{data | json}}</pre>
+</div> -->
